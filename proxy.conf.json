@@ -1,0 +1,15 @@
+{
+  "/api/lm-studio": {
+    "target": "http://localhost:1234",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/api/lm-studio": "" },
+    "logLevel": "debug"
+  },
+  "/api": {
+    "target": "http://localhost:82",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

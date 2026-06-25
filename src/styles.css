@@ -1,1 +1,860 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-bg: #f8fafc;
+}
+
+.dark {
+  --app-bg: #0f172a;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--app-bg);
+  @apply text-slate-900 antialiased overflow-x-hidden;
+}
+
+.dark body,
+body.dark {
+  @apply text-slate-100;
+}
+
+.dark .bg-white {
+  @apply bg-slate-800;
+}
+
+.dark .bg-slate-50 {
+  @apply bg-slate-900;
+}
+
+.dark .border-slate-100 {
+  @apply border-slate-700;
+}
+
+.dark .border-slate-50 {
+  @apply border-slate-700/50;
+}
+
+.dark .text-slate-900 {
+  @apply text-slate-100;
+}
+
+.dark .text-slate-400 {
+  color: #64748b;
+}
+
+.dark .text-slate-300 {
+  color: #64748b;
+}
+
+.dark .shadow-soft {
+  @apply shadow-none border border-slate-700;
+}
+
+.dark .bg-slate-50\/30 {
+  @apply bg-slate-800/30;
+}
+
+.dark .bg-slate-50\/50 {
+  @apply bg-slate-800/50;
+}
+
+.dark .bg-slate-100 {
+  @apply bg-slate-800;
+}
+
+.dark .bg-slate-100\/50 {
+  @apply bg-slate-800/50;
+}
+
+.dark .bg-slate-200 {
+  @apply bg-slate-700;
+}
+
+.dark .bg-emerald-50 {
+  @apply bg-emerald-900/30;
+}
+
+.dark .bg-emerald-50\/20 {
+  @apply bg-emerald-900/20;
+}
+
+.dark .text-emerald-700 {
+  @apply text-emerald-400;
+}
+
+.dark .text-emerald-600 {
+  @apply text-emerald-400;
+}
+
+.dark .bg-red-50 {
+  @apply bg-red-900/30;
+}
+
+.dark .text-red-700 {
+  @apply text-red-400;
+}
+
+.dark .text-red-500 {
+  @apply text-red-400;
+}
+
+.dark .bg-amber-50 {
+  @apply bg-amber-900/30;
+}
+
+.dark .text-amber-700 {
+  @apply text-amber-400;
+}
+
+.dark .bg-blue-50 {
+  @apply bg-blue-900/30;
+}
+
+.dark .text-blue-600 {
+  @apply text-blue-400;
+}
+
+.dark .bg-orange-50 {
+  @apply bg-orange-900/30;
+}
+
+.dark .text-orange-600 {
+  @apply text-orange-400;
+}
+
+.dark .bg-purple-50 {
+  @apply bg-purple-900/30;
+}
+
+.dark .text-purple-700 {
+  @apply text-purple-400;
+}
+
+.dark .ring-slate-100 {
+  @apply ring-slate-700;
+}
+
+.dark .hover\:bg-slate-50:hover {
+  @apply hover:bg-slate-700;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  @apply hover:bg-slate-700;
+}
+
+.dark .hover\:text-emerald-700:hover {
+  @apply hover:text-emerald-400;
+}
+
+.dark .hover\:text-slate-900:hover {
+  @apply hover:text-slate-100;
+}
+
+.dark .hover\:border-emerald-100:hover {
+  @apply hover:border-emerald-800;
+}
+
+.dark .focus\:border-emerald-700\/10:focus {
+  @apply focus:border-emerald-400/30;
+}
+
+.dark .focus\:ring-emerald-700\/20:focus {
+  @apply focus:ring-emerald-400/20;
+}
+
+.dark .focus\:ring-emerald-700\/5:focus {
+  @apply focus:ring-emerald-400/10;
+}
+
+/* Header in dark mode matches sidebar background */
+.dark header {
+  @apply bg-slate-800 border-slate-700/50;
+}
+
+/* Calendar grid lines in dark mode - softer contrast */
+.dark .divide-slate-50 {
+  @apply divide-slate-700/40;
+}
+
+.dark .shadow-slate-200\/50 {
+  @apply shadow-slate-900/50;
+}
+
+.dark .hover\:bg-slate-50\/80:hover {
+  @apply hover:bg-slate-700/40;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  @apply bg-slate-800 text-slate-100 border-slate-700;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  @apply text-slate-500;
+}
+
+.dark table .divide-slate-50 > * {
+  @apply border-slate-700/50;
+}
+
+.dark table .hover\:bg-slate-50\/30:hover {
+  @apply hover:bg-slate-800/50;
+}
+
+.dark table .bg-slate-50\/50 {
+  @apply bg-slate-800/50;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-700;
+}
+
+/* Transitions */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Sepia Theme ===== */
+.sepia {
+  --app-bg: #f5e6d0;
+}
+
+.sepia body,
+body.sepia {
+  color: #5c4033;
+}
+
+.sepia .bg-white {
+  background-color: #faf0e6;
+}
+
+.sepia .bg-slate-50 {
+  background-color: #f5e6d0;
+}
+
+.sepia .bg-slate-50\/30 {
+  background-color: #f5e6d030;
+}
+
+.sepia .bg-slate-50\/50 {
+  background-color: #f5e6d080;
+}
+
+.sepia .bg-slate-100 {
+  background-color: #efe0c8;
+}
+
+.sepia .bg-slate-100\/50 {
+  background-color: #efe0c880;
+}
+
+.sepia .bg-slate-200 {
+  background-color: #e8d5b8;
+}
+
+.sepia .border-slate-100 {
+  border-color: #e8d5b8;
+}
+
+.sepia .border-slate-50 {
+  border-color: #dcc8a8;
+}
+
+.sepia .text-slate-900 {
+  color: #5c4033;
+}
+
+.sepia .text-slate-500 {
+  color: #8b7355;
+}
+
+.sepia .text-slate-400 {
+  color: #a09070;
+}
+
+.sepia .text-slate-300 {
+  color: #a09070;
+}
+
+.sepia .shadow-soft {
+  box-shadow: none;
+  border: 1px solid #e8d5b8;
+}
+
+.sepia .bg-emerald-50 {
+  background-color: #f0ebe0;
+}
+
+.sepia .text-emerald-700 {
+  color: #7a6b4a;
+}
+
+.sepia .text-emerald-600 {
+  color: #7a6b4a;
+}
+
+.sepia .bg-red-50 {
+  background-color: #faeee6;
+}
+
+.sepia .text-red-700 {
+  color: #b06040;
+}
+
+.sepia .text-red-500 {
+  color: #b06040;
+}
+
+.sepia .bg-amber-50 {
+  background-color: #faeee6;
+}
+
+.sepia .text-amber-700 {
+  color: #b08040;
+}
+
+.sepia .bg-blue-50 {
+  background-color: #e8ecf0;
+}
+
+.sepia .text-blue-600 {
+  color: #5a7090;
+}
+
+.sepia .bg-orange-50 {
+  background-color: #fae8d0;
+}
+
+.sepia .text-orange-600 {
+  color: #b08040;
+}
+
+.sepia .bg-purple-50 {
+  background-color: #ece8f0;
+}
+
+.sepia .text-purple-700 {
+  color: #7a6090;
+}
+
+.sepia .ring-slate-100 {
+  --tw-ring-color: #e8d5b8;
+}
+
+.sepia .hover\:bg-slate-50:hover {
+  background-color: #f5e6d0;
+}
+
+.sepia .hover\:bg-slate-100:hover {
+  background-color: #efe0c8;
+}
+
+.sepia .hover\:text-emerald-700:hover {
+  color: #7a6b4a;
+}
+
+.sepia .hover\:text-slate-900:hover {
+  color: #5c4033;
+}
+
+.sepia .hover\:border-emerald-100:hover {
+  border-color: #dcc8a8;
+}
+
+.sepia .focus\:border-emerald-700\/10:focus {
+  border-color: #7a6b4a1a;
+}
+
+.sepia .focus\:ring-emerald-700\/20:focus {
+  --tw-ring-color: #7a6b4a33;
+}
+
+.sepia .focus\:ring-emerald-700\/5:focus {
+  --tw-ring-color: #7a6b4a0d;
+}
+
+.sepia header {
+  background-color: #faf0e6;
+  border-color: #e8d5b8;
+}
+
+.sepia .divide-slate-50 {
+  border-color: #dcc8a8;
+}
+
+.sepia .shadow-slate-200\/50 {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.sepia .hover\:bg-slate-50\/80:hover {
+  background-color: #f5e6d0cc;
+}
+
+.sepia input,
+.sepia textarea,
+.sepia select {
+  background-color: #faf0e6;
+  color: #5c4033;
+  border-color: #e8d5b8;
+}
+
+.sepia input::placeholder,
+.sepia textarea::placeholder {
+  color: #a09070;
+}
+
+.sepia table .divide-slate-50 > * {
+  border-color: #dcc8a8;
+}
+
+.sepia table .hover\:bg-slate-50\/30:hover {
+  background-color: #f5e6d04d;
+}
+
+.sepia table .bg-slate-50\/50 {
+  background-color: #f5e6d080;
+}
+
+.sepia ::-webkit-scrollbar-thumb {
+  background-color: #e8d5b8;
+}
+
+/* ===== Forest Theme ===== */
+.forest {
+  --app-bg: #0f1f0f;
+}
+
+.forest body,
+body.forest {
+  color: #e8f0e8;
+}
+
+.forest .bg-white {
+  background-color: #1a2e1a;
+}
+
+.forest .bg-slate-50 {
+  background-color: #0f1f0f;
+}
+
+.forest .bg-slate-50\/30 {
+  background-color: #0f1f0f4d;
+}
+
+.forest .bg-slate-50\/50 {
+  background-color: #0f1f0f80;
+}
+
+.forest .bg-slate-100 {
+  background-color: #1a2e1a;
+}
+
+.forest .bg-slate-100\/50 {
+  background-color: #1a2e1a80;
+}
+
+.forest .bg-slate-200 {
+  background-color: #2a3e2a;
+}
+
+.forest .border-slate-100 {
+  border-color: #2a3e2a;
+}
+
+.forest .border-slate-50 {
+  border-color: #2a3e2a80;
+}
+
+.forest .text-slate-900 {
+  color: #e8f0e8;
+}
+
+.forest .text-slate-500 {
+  color: #8a9a8a;
+}
+
+.forest .text-slate-400 {
+  color: #6a7a6a;
+}
+
+.forest .text-slate-300 {
+  color: #6a7a6a;
+}
+
+.forest .shadow-soft {
+  box-shadow: none;
+  border: 1px solid #2a3e2a;
+}
+
+.forest .bg-emerald-50 {
+  background-color: #1a3a1a4d;
+}
+
+.forest .text-emerald-700 {
+  color: #6aba6a;
+}
+
+.forest .text-emerald-600 {
+  color: #6aba6a;
+}
+
+.forest .bg-red-50 {
+  background-color: #3a1a1a4d;
+}
+
+.forest .text-red-700 {
+  color: #da6a6a;
+}
+
+.forest .text-red-500 {
+  color: #da6a6a;
+}
+
+.forest .bg-amber-50 {
+  background-color: #3a3a1a4d;
+}
+
+.forest .text-amber-700 {
+  color: #daba6a;
+}
+
+.forest .bg-blue-50 {
+  background-color: #1a2a3a4d;
+}
+
+.forest .text-blue-600 {
+  color: #6a9ada;
+}
+
+.forest .bg-orange-50 {
+  background-color: #3a2a1a4d;
+}
+
+.forest .text-orange-600 {
+  color: #da9a6a;
+}
+
+.forest .bg-purple-50 {
+  background-color: #2a1a3a4d;
+}
+
+.forest .text-purple-700 {
+  color: #9a6ada;
+}
+
+.forest .ring-slate-100 {
+  --tw-ring-color: #2a3e2a;
+}
+
+.forest .hover\:bg-slate-50:hover {
+  background-color: #0f1f0f;
+}
+
+.forest .hover\:bg-slate-100:hover {
+  background-color: #1a2e1a;
+}
+
+.forest .hover\:text-emerald-700:hover {
+  color: #6aba6a;
+}
+
+.forest .hover\:text-slate-900:hover {
+  color: #e8f0e8;
+}
+
+.forest .hover\:border-emerald-100:hover {
+  border-color: #2a4e2a;
+}
+
+.forest .focus\:border-emerald-700\/10:focus {
+  border-color: #6aba6a1a;
+}
+
+.forest .focus\:ring-emerald-700\/20:focus {
+  --tw-ring-color: #6aba6a33;
+}
+
+.forest .focus\:ring-emerald-700\/5:focus {
+  --tw-ring-color: #6aba6a0d;
+}
+
+.forest header {
+  background-color: #1a2e1a;
+  border-color: #2a3e2a80;
+}
+
+.forest .divide-slate-50 {
+  border-color: #2a3e2a66;
+}
+
+.forest .shadow-slate-200\/50 {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+}
+
+.forest .hover\:bg-slate-50\/80:hover {
+  background-color: #0f1f0fcc;
+}
+
+.forest input,
+.forest textarea,
+.forest select {
+  background-color: #1a2e1a;
+  color: #e8f0e8;
+  border-color: #2a3e2a;
+}
+
+.forest input::placeholder,
+.forest textarea::placeholder {
+  color: #6a7a6a;
+}
+
+.forest table .divide-slate-50 > * {
+  border-color: #2a3e2a80;
+}
+
+.forest table .hover\:bg-slate-50\/30:hover {
+  background-color: #0f1f0f4d;
+}
+
+.forest table .bg-slate-50\/50 {
+  background-color: #0f1f0f80;
+}
+
+.forest ::-webkit-scrollbar-thumb {
+  background-color: #2a3e2a;
+}
+
+/* ===== Ocean Theme ===== */
+.ocean {
+  --app-bg: #0f1a2e;
+}
+
+.ocean body,
+body.ocean {
+  color: #e0e8f0;
+}
+
+.ocean .bg-white {
+  background-color: #1a2a3e;
+}
+
+.ocean .bg-slate-50 {
+  background-color: #0f1a2e;
+}
+
+.ocean .bg-slate-50\/30 {
+  background-color: #0f1a2e4d;
+}
+
+.ocean .bg-slate-50\/50 {
+  background-color: #0f1a2e80;
+}
+
+.ocean .bg-slate-100 {
+  background-color: #1a2a3e;
+}
+
+.ocean .bg-slate-100\/50 {
+  background-color: #1a2a3e80;
+}
+
+.ocean .bg-slate-200 {
+  background-color: #2a3a4e;
+}
+
+.ocean .border-slate-100 {
+  border-color: #2a3a4e;
+}
+
+.ocean .border-slate-50 {
+  border-color: #2a3a4e80;
+}
+
+.ocean .text-slate-900 {
+  color: #e0e8f0;
+}
+
+.ocean .text-slate-500 {
+  color: #8a9aaa;
+}
+
+.ocean .text-slate-400 {
+  color: #6a7a8a;
+}
+
+.ocean .text-slate-300 {
+  color: #6a7a8a;
+}
+
+.ocean .shadow-soft {
+  box-shadow: none;
+  border: 1px solid #2a3a4e;
+}
+
+.ocean .bg-emerald-50 {
+  background-color: #1a2a4a4d;
+}
+
+.ocean .text-emerald-700 {
+  color: #5ababa;
+}
+
+.ocean .text-emerald-600 {
+  color: #5ababa;
+}
+
+.ocean .bg-red-50 {
+  background-color: #3a1a2a4d;
+}
+
+.ocean .text-red-700 {
+  color: #da6a7a;
+}
+
+.ocean .text-red-500 {
+  color: #da6a7a;
+}
+
+.ocean .bg-amber-50 {
+  background-color: #3a3a1a4d;
+}
+
+.ocean .text-amber-700 {
+  color: #daba6a;
+}
+
+.ocean .bg-blue-50 {
+  background-color: #1a2a4a4d;
+}
+
+.ocean .text-blue-600 {
+  color: #6abaee;
+}
+
+.ocean .bg-orange-50 {
+  background-color: #3a2a1a4d;
+}
+
+.ocean .text-orange-600 {
+  color: #da9a6a;
+}
+
+.ocean .bg-purple-50 {
+  background-color: #2a1a4a4d;
+}
+
+.ocean .text-purple-700 {
+  color: #9a6ada;
+}
+
+.ocean .ring-slate-100 {
+  --tw-ring-color: #2a3a4e;
+}
+
+.ocean .hover\:bg-slate-50:hover {
+  background-color: #0f1a2e;
+}
+
+.ocean .hover\:bg-slate-100:hover {
+  background-color: #1a2a3e;
+}
+
+.ocean .hover\:text-emerald-700:hover {
+  color: #5ababa;
+}
+
+.ocean .hover\:text-slate-900:hover {
+  color: #e0e8f0;
+}
+
+.ocean .hover\:border-emerald-100:hover {
+  border-color: #2a4a5e;
+}
+
+.ocean .focus\:border-emerald-700\/10:focus {
+  border-color: #5ababa1a;
+}
+
+.ocean .focus\:ring-emerald-700\/20:focus {
+  --tw-ring-color: #5ababa33;
+}
+
+.ocean .focus\:ring-emerald-700\/5:focus {
+  --tw-ring-color: #5ababa0d;
+}
+
+.ocean header {
+  background-color: #1a2a3e;
+  border-color: #2a3a4e80;
+}
+
+.ocean .divide-slate-50 {
+  border-color: #2a3a4e66;
+}
+
+.ocean .shadow-slate-200\/50 {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+}
+
+.ocean .hover\:bg-slate-50\/80:hover {
+  background-color: #0f1a2ecc;
+}
+
+.ocean input,
+.ocean textarea,
+.ocean select {
+  background-color: #1a2a3e;
+  color: #e0e8f0;
+  border-color: #2a3a4e;
+}
+
+.ocean input::placeholder,
+.ocean textarea::placeholder {
+  color: #6a7a8a;
+}
+
+.ocean table .divide-slate-50 > * {
+  border-color: #2a3a4e80;
+}
+
+.ocean table .hover\:bg-slate-50\/30:hover {
+  background-color: #0f1a2e4d;
+}
+
+.ocean table .bg-slate-50\/50 {
+  background-color: #0f1a2e80;
+}
+
+.ocean ::-webkit-scrollbar-thumb {
+  background-color: #2a3a4e;
+}
+
+/* Theme transition on html element */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

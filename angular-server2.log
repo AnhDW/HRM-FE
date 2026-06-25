@@ -1,0 +1,399 @@
+[1m[33m
+Warning: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disable-host-check" if that's the
+case.
+    [39m[22m
+[1m[33mComponent HMR has been enabled, see https://angular.dev/hmr for more info.[39m[22m
+[33m❯[39m Building...
+
+[1m[33m[1m[33mwarn[33m[22m[1m - The class `duration-[5000ms]` is ambiguous and matches multiple utilities.[39m[22m
+[1m[33m[1m[33mwarn[33m[22m[1m - If this is content and not a class, replace it with `duration-&lsqb;5000ms&rsqb;` to silence this warning.[39m[22m
+[32m✔[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                           [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mpolyfills.js[39m       [2m | [22m[2mpolyfills[22m                      [2m | [22m [36m89.77 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m                         [2m | [22m [36m83.51 kB[39m[2m | [22m
+[32mchunk-5LUK7E2S.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.37 kB[39m[2m | [22m
+[32mchunk-OQLRT42E.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m12.29 kB[39m[2m | [22m
+[32mchunk-WGDD2C4V.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m6.71 kB[39m[2m | [22m
+[32mchunk-QELVHQP5.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m5.23 kB[39m[2m | [22m
+[32mchunk-4FTDTE2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.94 kB[39m[2m | [22m
+[32mchunk-Y5RQAIA6.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.50 kB[39m[2m | [22m
+[32mchunk-3LWX5743.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m986 bytes[39m[2m | [22m
+[32mchunk-3AOWHH53.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m976 bytes[39m[2m | [22m
+[32mchunk-TJQVCGRF.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-6ARX6M4K.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m812 bytes[39m[2m | [22m
+[32mchunk-QCMCWM2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m796 bytes[39m[2m | [22m
+[32mchunk-JQ2JICJD.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m734 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m                  [2m | [22m[1m388.98 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mchunk-AWQITBVY.js[39m  [2m | [22m[2madmin-payslip-component[22m        [2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-ZPWMNRDN.js[39m  [2m | [22m[2madmin-attendance-component[22m     [2m | [22m[36m110.37 kB[39m[2m | [22m
+[32mchunk-ZLF2O5P7.js[39m  [2m | [22m[2madmin-employee-detail-component[22m[2m | [22m [36m89.99 kB[39m[2m | [22m
+[32mchunk-EM72ZAW2.js[39m  [2m | [22m[2mcalendar-component[22m             [2m | [22m [36m80.86 kB[39m[2m | [22m
+[32mchunk-XQMP6CCP.js[39m  [2m | [22m[2madmin-organization-component[22m   [2m | [22m [36m68.06 kB[39m[2m | [22m
+[32mchunk-F3D3VSEV.js[39m  [2m | [22m[2morganization-component[22m         [2m | [22m [36m59.92 kB[39m[2m | [22m
+[32mchunk-VHYJL7SS.js[39m  [2m | [22m[2madmin-leave-component[22m          [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-U37KUXFS.js[39m  [2m | [22m[2madmin-employee-component[22m       [2m | [22m [36m56.92 kB[39m[2m | [22m
+[32mchunk-BNIXDEE3.js[39m  [2m | [22m[2mprofile-component[22m              [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-DSU77WMA.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.90 kB[39m[2m | [22m
+[32mchunk-SOND7TMS.js[39m  [2m | [22m[2msettings-component[22m             [2m | [22m [36m32.57 kB[39m[2m | [22m
+[32mchunk-THCSE76W.js[39m  [2m | [22m[2mattendance-component[22m           [2m | [22m [36m32.09 kB[39m[2m | [22m
+[32mchunk-NXLEP7A4.js[39m  [2m | [22m[2mleave-requests-component[22m       [2m | [22m [36m31.77 kB[39m[2m | [22m
+[32mchunk-3T3SAAPZ.js[39m  [2m | [22m[2mpayroll-component[22m              [2m | [22m [36m30.09 kB[39m[2m | [22m
+[32mchunk-B4W577N5.js[39m  [2m | [22m[2mlogin-component[22m                [2m | [22m [36m26.03 kB[39m[2m | [22m
+[2m...and 2 more lazy chunks files. Use "--verbose" to show all the files.[22m
+
+Application bundle generation complete. [5.464 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4200[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.1.8:[1m4200[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.229.1:[1m4200[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.188.1:[1m4200[22m/[39m
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-4NMMVXE2.js[39m  [2m | [22m[2mcalendar-component[22m[2m | [22m [36m80.89 kB[39m[2m | [22m
+
+Application bundle generation complete. [2.191 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                           [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mpolyfills.js[39m       [2m | [22m[2mpolyfills[22m                      [2m | [22m [36m89.77 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m                         [2m | [22m [36m83.51 kB[39m[2m | [22m
+[32mchunk-5LUK7E2S.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.37 kB[39m[2m | [22m
+[32mchunk-OQLRT42E.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m12.29 kB[39m[2m | [22m
+[32mchunk-WGDD2C4V.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m6.71 kB[39m[2m | [22m
+[32mchunk-QELVHQP5.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m5.23 kB[39m[2m | [22m
+[32mchunk-4FTDTE2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.94 kB[39m[2m | [22m
+[32mchunk-Y5RQAIA6.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.50 kB[39m[2m | [22m
+[32mchunk-3LWX5743.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m986 bytes[39m[2m | [22m
+[32mchunk-3AOWHH53.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m976 bytes[39m[2m | [22m
+[32mchunk-TJQVCGRF.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-6ARX6M4K.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m812 bytes[39m[2m | [22m
+[32mchunk-QCMCWM2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m796 bytes[39m[2m | [22m
+[32mchunk-JQ2JICJD.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m734 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m                  [2m | [22m[1m388.98 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mchunk-AWQITBVY.js[39m  [2m | [22m[2madmin-payslip-component[22m        [2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-ZPWMNRDN.js[39m  [2m | [22m[2madmin-attendance-component[22m     [2m | [22m[36m110.37 kB[39m[2m | [22m
+[32mchunk-ZLF2O5P7.js[39m  [2m | [22m[2madmin-employee-detail-component[22m[2m | [22m [36m89.99 kB[39m[2m | [22m
+[32mchunk-4NMMVXE2.js[39m  [2m | [22m[2mcalendar-component[22m             [2m | [22m [36m80.89 kB[39m[2m | [22m
+[32mchunk-XQMP6CCP.js[39m  [2m | [22m[2madmin-organization-component[22m   [2m | [22m [36m68.06 kB[39m[2m | [22m
+[32mchunk-F3D3VSEV.js[39m  [2m | [22m[2morganization-component[22m         [2m | [22m [36m59.92 kB[39m[2m | [22m
+[32mchunk-VHYJL7SS.js[39m  [2m | [22m[2madmin-leave-component[22m          [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-U37KUXFS.js[39m  [2m | [22m[2madmin-employee-component[22m       [2m | [22m [36m56.92 kB[39m[2m | [22m
+[32mchunk-BNIXDEE3.js[39m  [2m | [22m[2mprofile-component[22m              [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-DSU77WMA.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.90 kB[39m[2m | [22m
+[32mchunk-SOND7TMS.js[39m  [2m | [22m[2msettings-component[22m             [2m | [22m [36m32.57 kB[39m[2m | [22m
+[32mchunk-THCSE76W.js[39m  [2m | [22m[2mattendance-component[22m           [2m | [22m [36m32.09 kB[39m[2m | [22m
+[32mchunk-NXLEP7A4.js[39m  [2m | [22m[2mleave-requests-component[22m       [2m | [22m [36m31.77 kB[39m[2m | [22m
+[32mchunk-3T3SAAPZ.js[39m  [2m | [22m[2mpayroll-component[22m              [2m | [22m [36m30.09 kB[39m[2m | [22m
+[32mchunk-B4W577N5.js[39m  [2m | [22m[2mlogin-component[22m                [2m | [22m [36m26.03 kB[39m[2m | [22m
+[2m...and 2 more lazy chunks files. Use "--verbose" to show all the files.[22m
+
+Application bundle generation complete. [0.422 seconds]
+
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                           [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mchunk-YMOJV3CS.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.37 kB[39m[2m | [22m
+[32mchunk-TZKFUBMX.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m12.29 kB[39m[2m | [22m
+[32mchunk-6QMOZOXO.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m986 bytes[39m[2m | [22m
+[32mchunk-2PIVVPIE.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m976 bytes[39m[2m | [22m
+[32mchunk-GPDUUWBD.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-G3AFH4C5.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m812 bytes[39m[2m | [22m
+[32mchunk-DTRIDO4A.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m796 bytes[39m[2m | [22m
+[32mchunk-UOV54TCA.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m734 bytes[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mchunk-MHTNWPFX.js[39m  [2m | [22m[2madmin-payslip-component[22m        [2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-4OTIDE4Q.js[39m  [2m | [22m[2madmin-attendance-component[22m     [2m | [22m[36m110.37 kB[39m[2m | [22m
+[32mchunk-Y5KAEB3B.js[39m  [2m | [22m[2madmin-employee-detail-component[22m[2m | [22m [36m89.99 kB[39m[2m | [22m
+[32mchunk-OGELW26J.js[39m  [2m | [22m[2mcalendar-component[22m             [2m | [22m [36m80.89 kB[39m[2m | [22m
+[32mchunk-LKUPSXTX.js[39m  [2m | [22m[2madmin-organization-component[22m   [2m | [22m [36m68.06 kB[39m[2m | [22m
+[32mchunk-UX5YNCY6.js[39m  [2m | [22m[2morganization-component[22m         [2m | [22m [36m59.92 kB[39m[2m | [22m
+[32mchunk-SJQFEYPS.js[39m  [2m | [22m[2madmin-leave-component[22m          [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-D57TZEXT.js[39m  [2m | [22m[2madmin-employee-component[22m       [2m | [22m [36m56.92 kB[39m[2m | [22m
+[32mchunk-FDF2WMWC.js[39m  [2m | [22m[2mprofile-component[22m              [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-2LPKFBWV.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.90 kB[39m[2m | [22m
+[32mchunk-GMFVRCGV.js[39m  [2m | [22m[2mattendance-component[22m           [2m | [22m [36m32.09 kB[39m[2m | [22m
+[32mchunk-ZLGWW6EB.js[39m  [2m | [22m[2mleave-requests-component[22m       [2m | [22m [36m31.77 kB[39m[2m | [22m
+[32mchunk-XXVDEOYM.js[39m  [2m | [22m[2mpayroll-component[22m              [2m | [22m [36m30.09 kB[39m[2m | [22m
+[32mchunk-4CNCH6B7.js[39m  [2m | [22m[2mdashboard-component[22m            [2m | [22m [36m20.91 kB[39m[2m | [22m
+[32mchunk-366BKM2J.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m698 bytes[39m[2m | [22m
+
+Application bundle generation complete. [4.718 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                           [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mchunk-5LUK7E2S.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.37 kB[39m[2m | [22m
+[32mchunk-OQLRT42E.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m12.29 kB[39m[2m | [22m
+[32mchunk-3LWX5743.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m986 bytes[39m[2m | [22m
+[32mchunk-M65KET57.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m976 bytes[39m[2m | [22m
+[32mchunk-TJQVCGRF.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-6ARX6M4K.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m812 bytes[39m[2m | [22m
+[32mchunk-QCMCWM2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m796 bytes[39m[2m | [22m
+[32mchunk-JQ2JICJD.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m734 bytes[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mchunk-CPDAIDZ6.js[39m  [2m | [22m[2madmin-payslip-component[22m        [2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-SW24W3HD.js[39m  [2m | [22m[2madmin-attendance-component[22m     [2m | [22m[36m110.37 kB[39m[2m | [22m
+[32mchunk-ZLF2O5P7.js[39m  [2m | [22m[2madmin-employee-detail-component[22m[2m | [22m [36m89.99 kB[39m[2m | [22m
+[32mchunk-NWDZRSYU.js[39m  [2m | [22m[2mcalendar-component[22m             [2m | [22m [36m80.89 kB[39m[2m | [22m
+[32mchunk-AW4SW46V.js[39m  [2m | [22m[2madmin-organization-component[22m   [2m | [22m [36m68.06 kB[39m[2m | [22m
+[32mchunk-HMLJVDT4.js[39m  [2m | [22m[2morganization-component[22m         [2m | [22m [36m59.92 kB[39m[2m | [22m
+[32mchunk-ZWZZSLKB.js[39m  [2m | [22m[2madmin-leave-component[22m          [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-S22OBORY.js[39m  [2m | [22m[2madmin-employee-component[22m       [2m | [22m [36m56.92 kB[39m[2m | [22m
+[32mchunk-BNIXDEE3.js[39m  [2m | [22m[2mprofile-component[22m              [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-7LWRGN7O.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.90 kB[39m[2m | [22m
+[32mchunk-THCSE76W.js[39m  [2m | [22m[2mattendance-component[22m           [2m | [22m [36m32.09 kB[39m[2m | [22m
+[32mchunk-WNR4OK7L.js[39m  [2m | [22m[2mleave-requests-component[22m       [2m | [22m [36m31.77 kB[39m[2m | [22m
+[32mchunk-3T3SAAPZ.js[39m  [2m | [22m[2mpayroll-component[22m              [2m | [22m [36m30.09 kB[39m[2m | [22m
+[32mchunk-E3TP3KJQ.js[39m  [2m | [22m[2mdashboard-component[22m            [2m | [22m [36m20.91 kB[39m[2m | [22m
+[32mchunk-R2BGQW3B.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m698 bytes[39m[2m | [22m
+
+Application bundle generation complete. [0.888 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-UQRH6UC6.js[39m  [2m | [22m[2mcalendar-component[22m[2m | [22m [36m80.89 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.923 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-NBTE7YWT.js[39m  [2m | [22m[2mcalendar-component[22m[2m | [22m [36m82.08 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.746 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-LUB2VPAP.js[39m  [2m | [22m[2mcalendar-component[22m[2m | [22m [36m82.08 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.874 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m              [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m             [2m | [22m [1mRaw size[22m
+[32mchunk-LARKWU32.js[39m  [2m | [22m[2mcalendar-component[22m[2m | [22m [36m83.20 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.786 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m            [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m             [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m            [2m | [22m [1mRaw size[22m
+[32mchunk-7IEX7OAW.js[39m  [2m | [22m[2mpayroll-component[22m[2m | [22m [36m30.09 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.890 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                  [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                   [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                  [2m | [22m [1mRaw size[22m
+[32mchunk-57O76JIW.js[39m  [2m | [22m[2madmin-payslip-component[22m[2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-UVNRH55V.js[39m  [2m | [22m[2mcalendar-component[22m     [2m | [22m [36m83.20 kB[39m[2m | [22m
+[32mchunk-CYGAN6JM.js[39m  [2m | [22m[2mprofile-component[22m      [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-TJPOT4LO.js[39m  [2m | [22m[2mpayroll-component[22m      [2m | [22m [36m30.74 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.651 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                   [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                    [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mchunk-F4PTGLGW.js[39m  [2m | [22m[2m-[22m                       [2m | [22m[36m906 bytes[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                   [2m | [22m [1mRaw size[22m
+[32mchunk-4ILCGSHG.js[39m  [2m | [22m[2madmin-leave-component[22m   [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-EEC2W372.js[39m  [2m | [22m[2mleave-requests-component[22m[2m | [22m [36m31.77 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.459 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                      [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m
+[32mchunk-XG6F3AGQ.js[39m  [2m | [22m[2madmin-attendance-component[22m[2m | [22m[36m109.74 kB[39m[2m | [22m
+[32mchunk-ZLCV4C65.js[39m  [2m | [22m[2mcalendar-component[22m        [2m | [22m [36m81.63 kB[39m[2m | [22m
+[32mchunk-PXVJ4OZ5.js[39m  [2m | [22m[2mdashboard-component[22m       [2m | [22m [36m27.96 kB[39m[2m | [22m
+[32mchunk-N4SKUKE2.js[39m  [2m | [22m[2m-[22m                         [2m | [22m  [36m1.88 kB[39m[2m | [22m
+[32mchunk-565ATJK2.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m814 bytes[39m[2m | [22m
+
+Application bundle generation complete. [0.756 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.583 seconds]
+
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate member "approvedLeaveDays" in class body[0m [duplicate-class-member]
+
+    src/app/features/dashboard/dashboard.component.ts:123:4:
+[37m      123 │     [32mapprovedLeaveDays[37m = computed(() => 0);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+  The original member "approvedLeaveDays" is here:
+
+    src/app/features/dashboard/dashboard.component.ts:90:4:
+[37m      90 │     [32mapprovedLeaveDays[37m = signal(0);
+         ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2300: Duplicate identifier 'approvedLeaveDays'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/features/dashboard/dashboard.component.ts:166:2:
+[37m      166 │   [32mapprovedLeaveDays[37m = computed(() => 0);
+          ╵   [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2717: Subsequent property declarations must have the same type.  Property 'approvedLeaveDays' must be of type 'WritableSignal<number>', but here has type 'Signal<number>'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/features/dashboard/dashboard.component.ts:166:2:
+[37m      166 │   [32mapprovedLeaveDays[37m = computed(() => 0);
+          ╵   [32m~~~~~~~~~~~~~~~~~[0m
+
+  'approvedLeaveDays' was also declared here.
+
+    src/app/features/dashboard/dashboard.component.ts:129:2:
+[37m      129 │   [32mapprovedLeaveDays[37m = signal(0);
+          ╵   [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                           [2m | [22m[36m149.47 kB[39m[2m | [22m
+[32mpolyfills.js[39m       [2m | [22m[2mpolyfills[22m                      [2m | [22m [36m89.77 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m                         [2m | [22m [36m83.51 kB[39m[2m | [22m
+[32mchunk-5LUK7E2S.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.37 kB[39m[2m | [22m
+[32mchunk-OQLRT42E.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m12.29 kB[39m[2m | [22m
+[32mchunk-WGDD2C4V.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m6.71 kB[39m[2m | [22m
+[32mchunk-QELVHQP5.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m5.23 kB[39m[2m | [22m
+[32mchunk-4FTDTE2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.94 kB[39m[2m | [22m
+[32mchunk-Y5RQAIA6.js[39m  [2m | [22m[2m-[22m                              [2m | [22m  [36m1.50 kB[39m[2m | [22m
+[32mchunk-3LWX5743.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m986 bytes[39m[2m | [22m
+[32mchunk-M65KET57.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m976 bytes[39m[2m | [22m
+[32mchunk-F4PTGLGW.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-TJQVCGRF.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m906 bytes[39m[2m | [22m
+[32mchunk-QCMCWM2T.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m796 bytes[39m[2m | [22m
+[32mchunk-JQ2JICJD.js[39m  [2m | [22m[2m-[22m                              [2m | [22m[36m734 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m                  [2m | [22m[1m389.07 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                          [2m | [22m [1mRaw size[22m
+[32mchunk-57O76JIW.js[39m  [2m | [22m[2madmin-payslip-component[22m        [2m | [22m[36m114.32 kB[39m[2m | [22m
+[32mchunk-XG6F3AGQ.js[39m  [2m | [22m[2madmin-attendance-component[22m     [2m | [22m[36m109.74 kB[39m[2m | [22m
+[32mchunk-ZLF2O5P7.js[39m  [2m | [22m[2madmin-employee-detail-component[22m[2m | [22m [36m89.99 kB[39m[2m | [22m
+[32mchunk-ZLCV4C65.js[39m  [2m | [22m[2mcalendar-component[22m             [2m | [22m [36m81.63 kB[39m[2m | [22m
+[32mchunk-AW4SW46V.js[39m  [2m | [22m[2madmin-organization-component[22m   [2m | [22m [36m68.06 kB[39m[2m | [22m
+[32mchunk-HMLJVDT4.js[39m  [2m | [22m[2morganization-component[22m         [2m | [22m [36m59.92 kB[39m[2m | [22m
+[32mchunk-4ILCGSHG.js[39m  [2m | [22m[2madmin-leave-component[22m          [2m | [22m [36m58.86 kB[39m[2m | [22m
+[32mchunk-S22OBORY.js[39m  [2m | [22m[2madmin-employee-component[22m       [2m | [22m [36m56.92 kB[39m[2m | [22m
+[32mchunk-CYGAN6JM.js[39m  [2m | [22m[2mprofile-component[22m              [2m | [22m [36m38.37 kB[39m[2m | [22m
+[32mchunk-7LWRGN7O.js[39m  [2m | [22m[2m-[22m                              [2m | [22m [36m33.90 kB[39m[2m | [22m
+[32mchunk-SOND7TMS.js[39m  [2m | [22m[2msettings-component[22m             [2m | [22m [36m32.57 kB[39m[2m | [22m
+[32mchunk-THCSE76W.js[39m  [2m | [22m[2mattendance-component[22m           [2m | [22m [36m32.09 kB[39m[2m | [22m
+[32mchunk-EEC2W372.js[39m  [2m | [22m[2mleave-requests-component[22m       [2m | [22m [36m31.77 kB[39m[2m | [22m
+[32mchunk-TJPOT4LO.js[39m  [2m | [22m[2mpayroll-component[22m              [2m | [22m [36m30.74 kB[39m[2m | [22m
+[32mchunk-5NDZE6ST.js[39m  [2m | [22m[2mdashboard-component[22m            [2m | [22m [36m27.95 kB[39m[2m | [22m
+[2m...and 4 more lazy chunks files. Use "--verbose" to show all the files.[22m
+
+Application bundle generation complete. [0.559 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m               [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mchunk-BP4535PQ.js[39m  [2m | [22m[2mdashboard-component[22m[2m | [22m [36m27.93 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.538 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m               [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mchunk-R5TWNUOO.js[39m  [2m | [22m[2mdashboard-component[22m[2m | [22m [36m27.87 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.576 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m               [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mchunk-MQLBE7JU.js[39m  [2m | [22m[2mdashboard-component[22m[2m | [22m [36m27.87 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.676 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
+[32m✔[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m               [2m | [22m[36m149.47 kB[39m[2m | [22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m              [2m | [22m [1mRaw size[22m
+[32mchunk-IEX5YUZK.js[39m  [2m | [22m[2mdashboard-component[22m[2m | [22m [36m28.08 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.687 seconds]
+
+Page reload sent to client(s).
+[33m❯[39m Changes detected. Rebuilding...
