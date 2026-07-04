@@ -2,6 +2,7 @@ import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule } from 'lucide-angular';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { Api } from '../../services/api-services/api';
 import { apiDepartmentsGet$Json } from '../../services/api-services/fn/departments/api-departments-get-json';
 import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/api-employees-get-json';
@@ -11,35 +12,38 @@ import { EmployeeDto, DepartmentDto } from '../../services/api-services/models';
 @Component({
   selector: 'app-organization',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-8 animate-in fade-in duration-700">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div data-tutorial="org-header" class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Tổ chức</h1>
           <p class="text-slate-500 mt-2">Quản lý phòng ban và khám phá thành viên trong nhóm.</p>
         </div>
 
-        <div class="bg-slate-100/50 p-1 rounded-2xl flex w-fit">
-          <button
-            [class]="activeTab() === 'dept' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-400'"
-            (click)="switchTab('dept')"
-            class="px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all"
-          >
-            Phòng ban
-          </button>
-          <button
-            [class]="activeTab() === 'empl' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-400'"
-            (click)="switchTab('empl')"
-            class="px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all"
-          >
-            Nhân viên
-          </button>
+        <div class="flex items-center gap-3">
+          <app-tutorial-button tutorialId="employee-organization"></app-tutorial-button>
+          <div data-tutorial="org-tabs" class="bg-slate-100/50 p-1 rounded-2xl flex w-fit">
+            <button
+              [class]="activeTab() === 'dept' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-400'"
+              (click)="switchTab('dept')"
+              class="px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all"
+            >
+              Phòng ban
+            </button>
+            <button
+              [class]="activeTab() === 'empl' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-400'"
+              (click)="switchTab('empl')"
+              class="px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all"
+            >
+              Nhân viên
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Search Bar -->
-      <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+      <div data-tutorial="org-search" class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
         <div class="relative w-full md:w-80">
           <lucide-icon name="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></lucide-icon>
           <input
@@ -95,7 +99,7 @@ import { EmployeeDto, DepartmentDto } from '../../services/api-services/models';
 
         <!-- Departments Grid -->
         @if (!loading() && !loadError() && activeTab() === 'dept') {
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in zoom-in-95 duration-300">
+          <div data-tutorial="org-dept-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in zoom-in-95 duration-300">
             @for (dept of departments(); track dept.id) {
               <div class="bg-white p-8 rounded-3xl shadow-soft border border-slate-100 hover:border-emerald-200 transition-all group">
                 <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-6 group-hover:bg-emerald-700 group-hover:text-white transition-all duration-500">
@@ -130,7 +134,7 @@ import { EmployeeDto, DepartmentDto } from '../../services/api-services/models';
 
         <!-- Employees Table -->
         @if (!loading() && !loadError() && activeTab() === 'empl') {
-          <div class="bg-white rounded-2xl shadow-soft border border-slate-100 overflow-hidden animate-in slide-in-from-right-4 duration-300">
+          <div data-tutorial="org-emp-list" class="bg-white rounded-2xl shadow-soft border border-slate-100 overflow-hidden animate-in slide-in-from-right-4 duration-300">
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse">
                 <thead>

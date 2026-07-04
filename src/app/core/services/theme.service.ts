@@ -1,7 +1,7 @@
 import { Injectable, signal, effect, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-export type ThemeMode = 'light' | 'dark' | 'system' | 'sepia' | 'forest' | 'ocean';
+export type ThemeMode = 'light' | 'dark' | 'system' | 'forest' | 'ocean' | 'rose';
 
 @Injectable({
   providedIn: 'root'
@@ -33,17 +33,17 @@ export class ThemeService {
 
   private applyTheme(mode: ThemeMode) {
     const el = this.document.documentElement;
-    el.classList.remove('dark', 'sepia', 'forest', 'ocean');
+    el.classList.remove('dark', 'forest', 'ocean', 'rose');
     if (mode === 'dark') {
       el.classList.add('dark');
     } else if (mode === 'system') {
       if (this.mediaQuery.matches) el.classList.add('dark');
-    } else if (mode === 'sepia') {
-      el.classList.add('sepia');
     } else if (mode === 'forest') {
       el.classList.add('forest');
     } else if (mode === 'ocean') {
       el.classList.add('ocean');
+    } else if (mode === 'rose') {
+      el.classList.add('rose');
     }
     localStorage.setItem(this.STORAGE_KEY, mode);
   }

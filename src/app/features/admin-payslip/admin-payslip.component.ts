@@ -1,12 +1,13 @@
 import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LucideAngularModule, Wallet, Search, Filter, ChevronLeft, ChevronRight, X, Edit2, Trash2, Save, Loader2, AlertCircle, CheckCircle2, Receipt, CalendarDays } from 'lucide-angular';
+import { LucideAngularModule, Wallet, Search, Filter, ChevronLeft, ChevronRight, X, Edit2, Trash2, Save, Loader2, AlertCircle, CheckCircle2, Receipt, CalendarDays, RefreshCw } from 'lucide-angular';
 import { Api } from '../../services/api-services/api';
 import { apiPayslipsGet$Json } from '../../services/api-services/fn/payslips/api-payslips-get-json';
 import { apiPayslipsPut$Json } from '../../services/api-services/fn/payslips/api-payslips-put-json';
 import { apiPayslipsIdDelete$Json } from '../../services/api-services/fn/payslips/api-payslips-id-delete-json';
 import { apiAttendancesGet$Json } from '../../services/api-services/fn/attendances/api-attendances-get-json';
+import { apiPayslipsSynchronizeAttendanceDataIdPut$Json } from '../../services/api-services/fn/payslips/api-payslips-synchronize-attendance-data-id-put-json';
 import { MockDataService } from '../../core/services/mock-data.service';
 import { EmployeePickerComponent } from '../../shared/employee-picker/employee-picker.component';
 import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
@@ -513,6 +514,15 @@ import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.c
                   </button>
                 </div>
               }
+              <button (click)="synchronizeAttendance()" [disabled]="syncing()"
+                class="px-5 py-2 text-sm font-bold text-emerald-700 hover:text-emerald-900 rounded-xl hover:bg-emerald-50 transition-all flex items-center gap-2">
+                @if (syncing()) {
+                  <lucide-icon name="loader2" class="w-4 h-4 animate-spin"></lucide-icon>
+                } @else {
+                  <lucide-icon name="refresh-cw" class="w-4 h-4"></lucide-icon>
+                }
+                Đồng bộ chấm công
+              </button>
               <button (click)="closeDetail()" class="px-5 py-2 text-sm font-bold text-slate-500 hover:text-slate-900 rounded-xl hover:bg-slate-100 transition-all">
                 Đóng
               </button>
@@ -600,6 +610,7 @@ export class AdminPayslipComponent implements OnInit {
   detailPage = signal(1);
   detailTotalPages = signal(0);
   detailLoading = signal(false);
+  syncing = signal(false);
 
   editForm: any = {};
 
@@ -724,6 +735,27 @@ export class AdminPayslipComponent implements OnInit {
   closeDetail() {
     this.detailSlip.set(null);
     this.detailAttendances.set([]);
+  }
+
+  async synchronizeAttendance() {
+    const slip = this.detailSlip();
+    if (!slip) return;
+    this.syncing.set(true);
+    this.error.set('');
+    this.successMsg.set('');
+    try {
+      const resp = await this.api.invoke(apiPayslipsSynchronizeAttendanceDataIdPut$Json, { id: slip.id });
+      if (resp.isSuccess) {
+        this.successMsg.set('Đồng bộ chấm công thành công.');
+        this.loadDetailAttendances();
+      } else {
+        this.error.set(resp.message || 'Đồng bộ chấm công thất bại.');
+      }
+    } catch {
+      this.error.set('Đồng bộ chấm công thất bại.');
+    } finally {
+      this.syncing.set(false);
+    }
   }
 
   async loadDetailAttendances() {

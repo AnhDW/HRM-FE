@@ -1,6 +1,7 @@
 import { Component, inject, signal, computed, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronLeft, ChevronRight, Calendar, Plus, Clock, CheckCircle2, AlertCircle } from 'lucide-angular';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { Api } from '../../services/api-services/api';
 import { AuthService } from '../../core/services/auth.service';
 import { apiAttendancesGet$Json } from '../../services/api-services/fn/attendances/api-attendances-get-json';
@@ -17,11 +18,11 @@ interface AttendanceEvent {
 @Component({
   selector: 'app-attendance',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-6 animate-in fade-in duration-700">
       <!-- Header Section -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div data-tutorial="att-header" class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 class="text-xl md:text-3xl font-black text-slate-900 tracking-tight flex items-center gap-2 md:gap-3">
              <lucide-icon name="calendar" class="w-6 h-6 md:w-8 md:h-8 text-emerald-600"></lucide-icon>
@@ -30,9 +31,11 @@ interface AttendanceEvent {
           <p class="text-slate-500 mt-1 font-medium text-xs md:text-base">Quản lý chấm công — Nhấn vào một ngày để xem chi tiết.</p>
         </div>
         
-        <div class="flex items-center gap-1 lg:gap-3 bg-white p-1 rounded-2xl border border-slate-100 shadow-sm">
-           <button 
-             (click)="goToToday()"
+        <div class="flex items-center gap-3">
+          <app-tutorial-button tutorialId="employee-attendance"></app-tutorial-button>
+           <div data-tutorial="att-nav" class="flex items-center gap-1 lg:gap-3 bg-white p-1 rounded-2xl border border-slate-100 shadow-sm">
+            <button 
+              (click)="goToToday()"
              class="hidden sm:block px-3 lg:px-4 py-2 text-xs lg:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl transition-all"
            >
              Hôm nay
@@ -48,12 +51,13 @@ interface AttendanceEvent {
               <button (click)="changeMonth(1)" class="p-1.5 lg:p-2 hover:bg-slate-50 rounded-xl text-slate-400 hover:text-slate-900 transition-all">
                 <lucide-icon name="chevron-right" class="w-4 h-4 lg:w-5 lg:h-5"></lucide-icon>
               </button>
-           </div>
-        </div>
+            </div>
+         </div>
+      </div>
       </div>
 
       <!-- Calendar Stats Summary -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+      <div data-tutorial="att-stats" class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
          <div class="bg-white p-3 md:p-4 rounded-2xl border border-slate-100 shadow-soft">
             <p class="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tổng công</p>
             <p class="text-base md:text-xl font-black text-emerald-600 mt-1">{{ workDays() }} Ngày</p>
@@ -73,7 +77,7 @@ interface AttendanceEvent {
       </div>
 
       <!-- Main Calendar Grid -->
-      <div class="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
+      <div data-tutorial="att-calendar" class="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
         <!-- Weekdays Header -->
          <div class="grid grid-cols-7 bg-slate-50/50 border-b border-slate-100">
             @for (day of weekDays; track day) {
@@ -154,7 +158,7 @@ interface AttendanceEvent {
       </div>
 
       <!-- Legend -->
-      <div class="flex flex-wrap items-center gap-3 md:gap-6 px-2 md:px-4">
+      <div data-tutorial="att-legend" class="flex flex-wrap items-center gap-3 md:gap-6 px-2 md:px-4">
          <div class="flex items-center gap-1.5 md:gap-2">
            <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-emerald-500 shadow-sm"></div>
            <span class="text-[10px] md:text-xs font-bold text-slate-500">Đúng giờ</span>

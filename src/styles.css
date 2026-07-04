@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--app-bg);
+  background-color: var(--app-bg, #ffffff);
   @apply text-slate-900 antialiased overflow-x-hidden;
 }
 
@@ -239,209 +239,160 @@ body.dark {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== Sepia Theme ===== */
-.sepia {
-  --app-bg: #f5e6d0;
+/* ===== Rose Theme ===== */
+.rose {
+  --app-bg: #fef1f2;
 }
-
-.sepia body,
-body.sepia {
-  color: #5c4033;
+.rose body,
+body.rose {
+  color: #4a252d;
 }
-
-.sepia .bg-white {
-  background-color: #faf0e6;
+.rose .bg-white {
+  background-color: #fff5f7;
 }
-
-.sepia .bg-slate-50 {
-  background-color: #f5e6d0;
+.rose .bg-slate-50 {
+  background-color: #fef1f2;
 }
-
-.sepia .bg-slate-50\/30 {
-  background-color: #f5e6d030;
+.rose .bg-slate-50\/30 {
+  background-color: #fef1f24d;
 }
-
-.sepia .bg-slate-50\/50 {
-  background-color: #f5e6d080;
+.rose .bg-slate-50\/50 {
+  background-color: #fef1f280;
 }
-
-.sepia .bg-slate-100 {
-  background-color: #efe0c8;
+.rose .bg-slate-100 {
+  background-color: #fce8ec;
 }
-
-.sepia .bg-slate-100\/50 {
-  background-color: #efe0c880;
+.rose .bg-slate-100\/50 {
+  background-color: #fce8ec80;
 }
-
-.sepia .bg-slate-200 {
-  background-color: #e8d5b8;
+.rose .bg-slate-200 {
+  background-color: #fadce2;
 }
-
-.sepia .border-slate-100 {
-  border-color: #e8d5b8;
+.rose .border-slate-100 {
+  border-color: #f5d6db;
 }
-
-.sepia .border-slate-50 {
-  border-color: #dcc8a8;
+.rose .border-slate-50 {
+  border-color: #f0c8cf;
 }
-
-.sepia .text-slate-900 {
-  color: #5c4033;
+.rose .text-slate-900 {
+  color: #3a1d24;
 }
-
-.sepia .text-slate-500 {
-  color: #8b7355;
+.rose .text-slate-500 {
+  color: #7a4e59;
 }
-
-.sepia .text-slate-400 {
-  color: #a09070;
+.rose .text-slate-400 {
+  color: #9a6d78;
 }
-
-.sepia .text-slate-300 {
-  color: #a09070;
+.rose .text-slate-300 {
+  color: #b88e97;
 }
-
-.sepia .shadow-soft {
-  box-shadow: none;
-  border: 1px solid #e8d5b8;
+.rose .shadow-soft {
+  box-shadow: 0 1px 3px 0 rgb(180 100 120 / 0.08), 0 1px 2px -1px rgb(180 100 120 / 0.05);
 }
-
-.sepia .bg-emerald-50 {
-  background-color: #f0ebe0;
+.rose .bg-emerald-50 {
+  background-color: #fde4e9;
 }
-
-.sepia .text-emerald-700 {
-  color: #7a6b4a;
+.rose .text-emerald-700 {
+  color: #b84058;
 }
-
-.sepia .text-emerald-600 {
-  color: #7a6b4a;
+.rose .text-emerald-600 {
+  color: #c94a63;
 }
-
-.sepia .bg-red-50 {
-  background-color: #faeee6;
+.rose .bg-red-50 {
+  background-color: #fde8e8;
 }
-
-.sepia .text-red-700 {
-  color: #b06040;
+.rose .text-red-700 {
+  color: #c0393f;
 }
-
-.sepia .text-red-500 {
-  color: #b06040;
+.rose .text-red-500 {
+  color: #c0393f;
 }
-
-.sepia .bg-amber-50 {
-  background-color: #faeee6;
+.rose .bg-amber-50 {
+  background-color: #fef0e0;
 }
-
-.sepia .text-amber-700 {
-  color: #b08040;
+.rose .text-amber-700 {
+  color: #b87830;
 }
-
-.sepia .bg-blue-50 {
-  background-color: #e8ecf0;
+.rose .bg-blue-50 {
+  background-color: #e8edf8;
 }
-
-.sepia .text-blue-600 {
-  color: #5a7090;
+.rose .text-blue-600 {
+  color: #5070a0;
 }
-
-.sepia .bg-orange-50 {
-  background-color: #fae8d0;
+.rose .bg-orange-50 {
+  background-color: #feead0;
 }
-
-.sepia .text-orange-600 {
-  color: #b08040;
+.rose .text-orange-600 {
+  color: #c07830;
 }
-
-.sepia .bg-purple-50 {
-  background-color: #ece8f0;
+.rose .bg-purple-50 {
+  background-color: #f0e8f5;
 }
-
-.sepia .text-purple-700 {
-  color: #7a6090;
+.rose .text-purple-700 {
+  color: #7a5590;
 }
-
-.sepia .ring-slate-100 {
-  --tw-ring-color: #e8d5b8;
+.rose .ring-slate-100 {
+  --tw-ring-color: #f5d6db;
 }
-
-.sepia .hover\:bg-slate-50:hover {
-  background-color: #f5e6d0;
+.rose .hover\:bg-slate-50:hover {
+  background-color: #fef1f2;
 }
-
-.sepia .hover\:bg-slate-100:hover {
-  background-color: #efe0c8;
+.rose .hover\:bg-slate-100:hover {
+  background-color: #fce8ec;
 }
-
-.sepia .hover\:text-emerald-700:hover {
-  color: #7a6b4a;
+.rose .hover\:text-emerald-700:hover {
+  color: #b84058;
 }
-
-.sepia .hover\:text-slate-900:hover {
-  color: #5c4033;
+.rose .hover\:text-slate-900:hover {
+  color: #3a1d24;
 }
-
-.sepia .hover\:border-emerald-100:hover {
-  border-color: #dcc8a8;
+.rose .hover\:border-emerald-100:hover {
+  border-color: #f0c8cf;
 }
-
-.sepia .focus\:border-emerald-700\/10:focus {
-  border-color: #7a6b4a1a;
+.rose .focus\:border-emerald-700\/10:focus {
+  border-color: #b840581a;
 }
-
-.sepia .focus\:ring-emerald-700\/20:focus {
-  --tw-ring-color: #7a6b4a33;
+.rose .focus\:ring-emerald-700\/20:focus {
+  --tw-ring-color: #b8405833;
 }
-
-.sepia .focus\:ring-emerald-700\/5:focus {
-  --tw-ring-color: #7a6b4a0d;
+.rose .focus\:ring-emerald-700\/5:focus {
+  --tw-ring-color: #b840580d;
 }
-
-.sepia header {
-  background-color: #faf0e6;
-  border-color: #e8d5b8;
+.rose header {
+  background-color: #fff5f7;
+  border-color: #f5d6db;
 }
-
-.sepia .divide-slate-50 {
-  border-color: #dcc8a8;
+.rose .divide-slate-50 {
+  border-color: #f0c8cf;
 }
-
-.sepia .shadow-slate-200\/50 {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+.rose .shadow-slate-200\/50 {
+  box-shadow: 0 1px 3px 0 rgb(180 100 120 / 0.1);
 }
-
-.sepia .hover\:bg-slate-50\/80:hover {
-  background-color: #f5e6d0cc;
+.rose .hover\:bg-slate-50\/80:hover {
+  background-color: #fef1f2cc;
 }
-
-.sepia input,
-.sepia textarea,
-.sepia select {
-  background-color: #faf0e6;
-  color: #5c4033;
-  border-color: #e8d5b8;
+.rose input,
+.rose textarea,
+.rose select {
+  background-color: #fff5f7;
+  color: #4a252d;
+  border-color: #f5d6db;
 }
-
-.sepia input::placeholder,
-.sepia textarea::placeholder {
-  color: #a09070;
+.rose input::placeholder,
+.rose textarea::placeholder {
+  color: #b88e97;
 }
-
-.sepia table .divide-slate-50 > * {
-  border-color: #dcc8a8;
+.rose table .divide-slate-50 > * {
+  border-color: #f0c8cf;
 }
-
-.sepia table .hover\:bg-slate-50\/30:hover {
-  background-color: #f5e6d04d;
+.rose table .hover\:bg-slate-50\/30:hover {
+  background-color: #fef1f24d;
 }
-
-.sepia table .bg-slate-50\/50 {
-  background-color: #f5e6d080;
+.rose table .bg-slate-50\/50 {
+  background-color: #fef1f280;
 }
-
-.sepia ::-webkit-scrollbar-thumb {
-  background-color: #e8d5b8;
+.rose ::-webkit-scrollbar-thumb {
+  background-color: #fadce2;
 }
 
 /* ===== Forest Theme ===== */
@@ -858,3 +809,5 @@ body.ocean {
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+

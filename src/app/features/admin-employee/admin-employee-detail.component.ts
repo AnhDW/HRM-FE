@@ -15,11 +15,12 @@ import { apiEmployeeDepartmentHistoriesPost$Json } from '../../services/api-serv
 import { SalaryConfigDto } from '../../services/api-services/models/salary-config-dto';
 import { EmployeeDepartmentHistoryDto } from '../../services/api-services/models/employee-department-history-dto';
 import { MockDataService } from '../../core/services/mock-data.service';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 
 @Component({
   selector: 'app-admin-employee-detail',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, RouterModule, LucideAngularModule, TutorialButtonComponent],
   styles: ['.rounded-teardrop { border-radius: 0 35% 35% 0 / 0 45% 45% 0 }'],
   template: `
     <div class="space-y-8 animate-in fade-in slide-in-from-right-4 duration-700 pb-20">
@@ -37,6 +38,9 @@ import { MockDataService } from '../../core/services/mock-data.service';
             [class.shadow-lg]="isScrolled()">
             <lucide-icon name="chevron-left" class="w-5 h-5"></lucide-icon>
           </a>
+          <div class="flex items-center gap-3 ml-auto">
+            <app-tutorial-button tutorialId="admin-employee-detail"></app-tutorial-button>
+          </div>
           <h1 [style.display]="isScrolled() ? 'none' : ''" class="font-bold text-slate-900 text-2xl truncate pointer-events-auto">Chi tiết nhân viên</h1>
         </div>
       </div>
@@ -67,7 +71,7 @@ import { MockDataService } from '../../core/services/mock-data.service';
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Sidebar Info -->
         <div class="lg:col-span-4 space-y-8">
-            <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100 text-center">
+            <div data-tutorial="employee-detail-profile" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100 text-center">
                <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl sm:rounded-[32px] overflow-hidden border-4 border-slate-50 shadow-lg mb-4 sm:mb-6">
                 <img [src]="'https://ui-avatars.com/api/?name=' + employee()?.fullName + '&size=256&background=0f766e&color=fff'" alt="Avatar">
               </div>
@@ -105,7 +109,7 @@ import { MockDataService } from '../../core/services/mock-data.service';
         <!-- Details Content -->
         <div class="lg:col-span-8 space-y-8">
            <!-- Basic Details -->
-            <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
+            <div data-tutorial="employee-detail-experience" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
                <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-6 sm:mb-8 flex items-center gap-3">
                   <lucide-icon name="briefcase" class="w-5 h-5 text-emerald-700"></lucide-icon>
                   Kinh nghiệm & Chức vụ
@@ -131,7 +135,7 @@ import { MockDataService } from '../../core/services/mock-data.service';
             </div>
 
            <!-- Salary Config -->
-            <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
+            <div data-tutorial="employee-detail-salary" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
                <div class="flex items-center justify-between mb-6 sm:mb-8">
                  <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-3">
                     <lucide-icon name="dollar-sign" class="w-5 h-5 text-emerald-700"></lucide-icon>
@@ -245,7 +249,7 @@ import { MockDataService } from '../../core/services/mock-data.service';
             </div>
 
            <!-- Account Management -->
-            <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
+            <div data-tutorial="employee-detail-account" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
                <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-6 sm:mb-8 flex items-center gap-3">
                   <lucide-icon name="lock" class="w-5 h-5 text-emerald-700"></lucide-icon>
                   Tài khoản đăng nhập
@@ -285,7 +289,7 @@ import { MockDataService } from '../../core/services/mock-data.service';
             </div>
 
            <!-- Transfer History + Chuyển phòng ban -->
-            <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
+            <div data-tutorial="employee-detail-transfer" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100">
                <div class="flex items-center justify-between mb-6 sm:mb-8">
                  <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-3">
                     <lucide-icon name="history" class="w-5 h-5 text-emerald-700"></lucide-icon>

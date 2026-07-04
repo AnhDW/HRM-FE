@@ -2,6 +2,7 @@ import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, CreditCard, Receipt, FileText, Download, Wallet, Search, Loader2 } from 'lucide-angular';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { MockDataService } from '../../core/services/mock-data.service';
 import { AuthService } from '../../core/services/auth.service';
 import { Api } from '../../services/api-services/api';
@@ -11,17 +12,20 @@ import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees
 @Component({
   selector: 'app-payroll',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-10 animate-in slide-in-from-right-4 duration-700">
-      <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Bảng lương & Phiếu lương</h1>
-        <p class="text-slate-500 mt-2">Theo dõi thu nhập hàng tháng và cấu hình lương.</p>
+      <div data-tutorial="pay-header" class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Bảng lương & Phiếu lương</h1>
+          <p class="text-slate-500 mt-2">Theo dõi thu nhập hàng tháng và cấu hình lương.</p>
+        </div>
+        <app-tutorial-button tutorialId="employee-payroll"></app-tutorial-button>
       </div>
 
       <!-- Financial Overview Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 bg-slate-900 rounded-2xl sm:rounded-[32px] p-6 sm:p-10 text-white relative overflow-hidden">
+        <div data-tutorial="pay-income" class="lg:col-span-2 bg-slate-900 rounded-2xl sm:rounded-[32px] p-6 sm:p-10 text-white relative overflow-hidden">
            <div class="relative z-10">
               <p class="text-slate-400 font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-3 sm:mb-4">Thu nhập ròng tháng này</p>
               <div class="flex flex-wrap items-end gap-2 sm:gap-3 mb-6 sm:mb-10">
@@ -52,7 +56,7 @@ import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees
            </div>
         </div>
 
-        <div class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100 flex flex-col justify-between">
+        <div data-tutorial="pay-bank" class="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 shadow-soft border border-slate-100 flex flex-col justify-between">
            <div>
               <h3 class="text-lg sm:text-xl font-bold text-slate-800">Thông tin ngân hàng</h3>
               <p class="text-slate-400 text-xs sm:text-sm mt-1">Quản lý bởi phòng Tài chính</p>
@@ -75,7 +79,7 @@ import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees
       </div>
 
       <!-- Month/Year Filters -->
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div data-tutorial="pay-filters" class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <h2 class="text-2xl font-bold text-slate-900 pl-1">Lịch sử thanh toán</h2>
         <div class="flex items-center gap-2 ml-auto">
           <select [(ngModel)]="filterMonth"
@@ -107,7 +111,7 @@ import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees
 
       <!-- Payslips List -->
       @if (!loading()) {
-        <div class="space-y-6">
+        <div data-tutorial="pay-list" class="space-y-6">
           @for (slip of payslips(); track slip.id) {
             <div class="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-[24px] shadow-soft border border-slate-100 hover:border-emerald-100 transition-all group flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-8">
               <div class="flex items-center gap-4 sm:gap-6">

@@ -9,20 +9,14 @@ import { RequestBuilder } from '../../request-builder';
 
 import { ResponseDto } from '../../models/response-dto';
 
-export interface ApiLeaveRequestsGet$Plain$Params {
-  EmployeeId?: number;
-  Status?: string;
-  PageNumber?: number;
-  PageSize?: number;
+export interface ApiPayslipsSynchronizeAttendanceDataIdPut$Plain$Params {
+  id: number;
 }
 
-export function apiLeaveRequestsGet$Plain(http: HttpClient, rootUrl: string, params?: ApiLeaveRequestsGet$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
-  const rb = new RequestBuilder(rootUrl, apiLeaveRequestsGet$Plain.PATH, 'get');
+export function apiPayslipsSynchronizeAttendanceDataIdPut$Plain(http: HttpClient, rootUrl: string, params: ApiPayslipsSynchronizeAttendanceDataIdPut$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<ResponseDto>> {
+  const rb = new RequestBuilder(rootUrl, apiPayslipsSynchronizeAttendanceDataIdPut$Plain.PATH, 'put');
   if (params) {
-    rb.query('EmployeeId', params.EmployeeId, {});
-    rb.query('Status', params.Status, {});
-    rb.query('PageNumber', params.PageNumber, {});
-    rb.query('PageSize', params.PageSize, {});
+    rb.path('id', params.id, {});
   }
 
   return http.request(
@@ -35,4 +29,4 @@ export function apiLeaveRequestsGet$Plain(http: HttpClient, rootUrl: string, par
   );
 }
 
-apiLeaveRequestsGet$Plain.PATH = '/api/LeaveRequests';
+apiPayslipsSynchronizeAttendanceDataIdPut$Plain.PATH = '/api/Payslips/synchronize-attendance-data/{id}';

@@ -9,11 +9,12 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
 import { apiLeaveRequestsGet$Json } from '../../services/api-services/fn/leave-requests/api-leave-requests-get-json';
 import { apiLeaveRequestsApprovePut$Json } from '../../services/api-services/fn/leave-requests/api-leave-requests-approve-put-json';
 import { EmployeePickerComponent } from '../../shared/components/employee-picker.component';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 
 @Component({
   selector: 'app-admin-leave',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule, EmployeePickerComponent],
+  imports: [CommonModule, FormsModule, LucideAngularModule, EmployeePickerComponent, TutorialButtonComponent],
   template: `
     <div class="space-y-8 animate-in fade-in duration-700">
       <!-- Header Section -->
@@ -29,6 +30,7 @@ import { EmployeePickerComponent } from '../../shared/components/employee-picker
               </span>
           </div>
         </div>
+        <app-tutorial-button tutorialId="admin-leave"></app-tutorial-button>
       </div>
 
       @if (error()) {
@@ -40,7 +42,7 @@ import { EmployeePickerComponent } from '../../shared/components/employee-picker
       }
 
       <!-- Filter & Tab Bar -->
-      <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+      <div data-tutorial="leave-filter" class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <!-- Employee Picker -->
         <app-employee-picker
           [selectedIds]="selectedEmployeeIds()"
@@ -74,7 +76,7 @@ import { EmployeePickerComponent } from '../../shared/components/employee-picker
       </div>
 
       <!-- Data Table -->
-      <div class="bg-white rounded-2xl shadow-soft border border-slate-100 overflow-hidden">
+      <div data-tutorial="leave-table" class="bg-white rounded-2xl shadow-soft border border-slate-100 overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -127,6 +129,7 @@ import { EmployeePickerComponent } from '../../shared/components/employee-picker
                         <div class="flex items-center justify-end gap-2">
                           <button
                             (click)="approve(req)"
+                            data-tutorial="leave-actions"
                             [disabled]="processingId() === req.id"
                             class="p-2.5 bg-emerald-50 text-emerald-700 rounded-xl hover:bg-emerald-100 transition-all disabled:opacity-50"
                           >

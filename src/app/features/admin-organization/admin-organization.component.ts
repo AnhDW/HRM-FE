@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, Plus, Edit2, Trash2, Users, Search, MoreHorizontal, Mail, Phone, X, ShieldCheck, Building, Loader2, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-angular';
 import { MockDataService } from '../../core/services/mock-data.service';
 import { Api } from '../../services/api-services/api';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { apiDepartmentsPost$Json } from '../../services/api-services/fn/departments/api-departments-post-json';
 import { apiDepartmentsPut$Json } from '../../services/api-services/fn/departments/api-departments-put-json';
 import { apiDepartmentsGet$Json } from '../../services/api-services/fn/departments/api-departments-get-json';
@@ -13,7 +14,7 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
 @Component({
   selector: 'app-admin-organization',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-8 animate-in slide-in-from-right-4 duration-700">
       <!-- Header -->
@@ -22,17 +23,20 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
           <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Cơ cấu tổ chức</h1>
            <p class="text-slate-500 mt-2">Quản lý phòng ban, nhóm và hệ thống phân cấp.</p>
         </div>
-        <button 
-          (click)="openAddModal()"
-          class="flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20"
-        >
-          <lucide-icon name="plus" class="w-5 h-5"></lucide-icon>
-           Thêm phòng ban
-        </button>
+        <div class="flex items-center gap-3">
+          <app-tutorial-button tutorialId="admin-organization"></app-tutorial-button>
+          <button
+            (click)="openAddModal()" data-tutorial="org-add"
+            class="flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20"
+          >
+            <lucide-icon name="plus" class="w-5 h-5"></lucide-icon>
+            Thêm phòng ban
+          </button>
+        </div>
       </div>
 
       <!-- Stats Bar -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div data-tutorial="org-stats" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @for (stat of stats(); track stat.label) {
           <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-5">
              <div [class]="'w-12 h-12 rounded-xl flex items-center justify-center ' + stat.bg">
@@ -67,7 +71,7 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
 
       <!-- Departments List -->
       @if (!deptLoading() && !deptError()) {
-      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div data-tutorial="org-list" class="grid grid-cols-1 xl:grid-cols-3 gap-6">
         @for (dept of departments(); track dept.id) {
           <div class="group bg-white rounded-[24px] p-6 shadow-soft border border-slate-100 hover:border-emerald-100 transition-all duration-300 relative overflow-hidden h-[340px] flex flex-col">
             <div class="flex justify-between items-start flex-shrink-0">
@@ -116,7 +120,7 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
                   </div>
                   <span class="text-xs font-bold text-slate-400">{{ deptEmployeeCount(dept.id) }} thành viên</span>
                </div>
-                <button (click)="openTeamModal(dept)" class="text-xs font-bold text-emerald-700 hover:underline">Xem nhóm</button>
+                 <button (click)="openTeamModal(dept)" data-tutorial="org-team" class="text-xs font-bold text-emerald-700 hover:underline">Xem nhóm</button>
              </div>
            </div>
          }

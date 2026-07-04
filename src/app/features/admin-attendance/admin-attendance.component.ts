@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, ChevronLeft, ChevronRight, Calendar, Plus, Clock, CheckCircle2, AlertCircle, X, Search, Users, CheckSquare, Loader2, Fingerprint, Edit2, Save, Trash2, AlertTriangle } from 'lucide-angular';
 import { MockDataService } from '../../core/services/mock-data.service';
 import { Api } from '../../services/api-services/api';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/api-employees-get-json';
 import { apiAttendancesTimekeepingPut$Json } from '../../services/api-services/fn/attendances/api-attendances-timekeeping-put-json';
 import { apiAttendancesPost$Json } from '../../services/api-services/fn/attendances/api-attendances-post-json';
@@ -32,7 +33,7 @@ interface DayInfo {
 @Component({
   selector: 'app-admin-attendance',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-6 animate-in fade-in duration-700">
       <!-- Header -->
@@ -45,11 +46,12 @@ interface DayInfo {
           <p class="text-slate-500 mt-1 font-medium text-xs md:text-base">Chọn nhân viên để xem lịch chấm công chi tiết.</p>
         </div>
         <div class="flex flex-wrap items-center gap-2 lg:gap-3">
-          <button (click)="openTimekeepingModal()" class="flex items-center gap-2 px-3 lg:px-4 py-2.5 bg-emerald-700 text-white rounded-xl shadow-lg shadow-emerald-700/20 hover:bg-emerald-800 transition-all text-xs lg:text-sm font-bold">
+          <app-tutorial-button tutorialId="admin-attendance"></app-tutorial-button>
+          <button (click)="openTimekeepingModal()" data-tutorial="attendance-timekeeping" class="flex items-center gap-2 px-3 lg:px-4 py-2.5 bg-emerald-700 text-white rounded-xl shadow-lg shadow-emerald-700/20 hover:bg-emerald-800 transition-all text-xs lg:text-sm font-bold">
             <lucide-icon name="fingerprint" class="w-4 h-4"></lucide-icon>
             <span class="hidden sm:inline">Chấm công thủ công</span>
           </button>
-          <button (click)="openEmployeePopup()" class="flex items-center gap-2 px-3 lg:px-4 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:bg-slate-50 transition-all text-xs lg:text-sm font-bold text-slate-700 max-w-[160px] lg:max-w-none truncate">
+          <button (click)="openEmployeePopup()" data-tutorial="attendance-employee-picker" class="flex items-center gap-2 px-3 lg:px-4 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:bg-slate-50 transition-all text-xs lg:text-sm font-bold text-slate-700 max-w-[160px] lg:max-w-none truncate">
             <lucide-icon name="users" class="w-4 h-4 text-slate-400 flex-shrink-0"></lucide-icon>
             <span class="truncate">{{ selectedEmployee() ? selectedEmployee()?.fullName : 'Chọn nhân viên' }}</span>
           </button>
@@ -70,7 +72,7 @@ interface DayInfo {
       </div>
 
       <!-- Stats Summary -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+      <div data-tutorial="attendance-stats" class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
          <div class="bg-white p-3 md:p-4 rounded-2xl border border-slate-100 shadow-soft">
             <p class="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tổng công</p>
             <p class="text-base md:text-xl font-black text-emerald-600 mt-1">{{ workDays() }} Ngày</p>
@@ -90,7 +92,7 @@ interface DayInfo {
       </div>
 
       <!-- Calendar Grid -->
-      <div class="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
+      <div data-tutorial="attendance-calendar" class="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
         <div class="grid grid-cols-7 bg-slate-50/50 border-b border-slate-100">
             @for (day of weekDays; track day) {
               <div class="py-2 md:py-4 text-center">
@@ -136,7 +138,7 @@ interface DayInfo {
       </div>
 
       <!-- Legend -->
-      <div class="flex flex-wrap items-center gap-3 md:gap-6 px-2 md:px-4">
+      <div data-tutorial="attendance-legend" class="flex flex-wrap items-center gap-3 md:gap-6 px-2 md:px-4">
          <div class="flex items-center gap-1.5 md:gap-2">
            <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-emerald-500 shadow-sm"></div>
            <span class="text-[10px] md:text-xs font-bold text-slate-500">Đúng giờ</span>

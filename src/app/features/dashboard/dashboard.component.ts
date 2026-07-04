@@ -2,6 +2,7 @@ import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Clock, Calendar, CheckCircle2, TrendingUp, Loader2 } from 'lucide-angular';
 import { RouterModule } from '@angular/router';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { AuthService } from '../../core/services/auth.service';
 import { Api } from '../../services/api-services/api';
 import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees/api-employees-me-get-json';
@@ -14,12 +15,15 @@ import { apiEventsByInvitedEmployeeIdMonthYearGet$Json } from '../../services/ap
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [CommonModule, RouterModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-10 animate-in fade-in duration-700">
-      <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ greeting() }}</h1>
-        <p class="text-slate-500 mt-2">Tổng quan hoạt động của bạn trong ngày hôm nay.</p>
+      <div data-tutorial="dash-greeting" class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ greeting() }}</h1>
+          <p class="text-slate-500 mt-2">Tổng quan hoạt động của bạn trong ngày hôm nay.</p>
+        </div>
+        <app-tutorial-button tutorialId="employee-dashboard"></app-tutorial-button>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -40,7 +44,7 @@ import { apiEventsByInvitedEmployeeIdMonthYearGet$Json } from '../../services/ap
            </div>
          </div>
 
-        <div class="bg-emerald-700 rounded-2xl p-8 shadow-lg shadow-emerald-700/20 text-white relative overflow-hidden group cursor-pointer transition-all-300 hover:scale-[1.02]" (click)="doTimekeeping()">
+        <div data-tutorial="dash-timekeeping" class="bg-emerald-700 rounded-2xl p-8 shadow-lg shadow-emerald-700/20 text-white relative overflow-hidden group cursor-pointer transition-all-300 hover:scale-[1.02]" (click)="doTimekeeping()">
           <div class="relative z-10">
             <h3 class="text-xl font-bold">Chấm công nhanh</h3>
              <p class="text-emerald-100/80 mt-1">Ghi nhận sự có mặt của bạn</p>
@@ -63,7 +67,7 @@ import { apiEventsByInvitedEmployeeIdMonthYearGet$Json } from '../../services/ap
       }
 
       @if (!loading()) {
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div data-tutorial="dash-stats" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           @for (stat of stats(); track stat.label) {
             <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 transition-all-300 hover:border-emerald-100">
               <div class="w-10 h-10 rounded-lg bg-slate-50 text-slate-700 flex items-center justify-center mb-4">
@@ -77,7 +81,7 @@ import { apiEventsByInvitedEmployeeIdMonthYearGet$Json } from '../../services/ap
       }
 
        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="bg-white rounded-2xl p-4 sm:p-8 shadow-soft border border-slate-100">
+          <div data-tutorial="dash-events" class="bg-white rounded-2xl p-4 sm:p-8 shadow-soft border border-slate-100">
             <div class="flex items-center justify-between mb-6">
                <h3 class="font-bold text-slate-900 text-base sm:text-lg">Sự kiện sắp tới</h3>
                <button routerLink="/calendar" class="text-emerald-700 text-sm font-semibold hover:underline flex-shrink-0">Xem tất cả</button>

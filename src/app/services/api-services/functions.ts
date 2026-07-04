@@ -209,6 +209,10 @@ export type { ApiPayslipsIdDelete$Plain$Params as ApiPayslipsIdDelete$Plain$Para
 export { apiPayslipsIdDelete$Plain as apiPayslipsIdDelete$Plain } from './fn/payslips/api-payslips-id-delete-plain';
 export type { ApiPayslipsIdDelete$Json$Params as ApiPayslipsIdDelete$Json$Params } from './fn/payslips/api-payslips-id-delete-json';
 export { apiPayslipsIdDelete$Json as apiPayslipsIdDelete$Json } from './fn/payslips/api-payslips-id-delete-json';
+export type { ApiPayslipsSynchronizeAttendanceDataIdPut$Plain$Params as ApiPayslipsSynchronizeAttendanceDataIdPut$Plain$Params } from './fn/payslips/api-payslips-synchronize-attendance-data-id-put-plain';
+export { apiPayslipsSynchronizeAttendanceDataIdPut$Plain as apiPayslipsSynchronizeAttendanceDataIdPut$Plain } from './fn/payslips/api-payslips-synchronize-attendance-data-id-put-plain';
+export type { ApiPayslipsSynchronizeAttendanceDataIdPut$Json$Params as ApiPayslipsSynchronizeAttendanceDataIdPut$Json$Params } from './fn/payslips/api-payslips-synchronize-attendance-data-id-put-json';
+export { apiPayslipsSynchronizeAttendanceDataIdPut$Json as apiPayslipsSynchronizeAttendanceDataIdPut$Json } from './fn/payslips/api-payslips-synchronize-attendance-data-id-put-json';
 export type { ApiSalaryConfigsGet$Plain$Params as ApiSalaryConfigsGet$Plain$Params } from './fn/salary-configs/api-salary-configs-get-plain';
 export { apiSalaryConfigsGet$Plain as apiSalaryConfigsGet$Plain } from './fn/salary-configs/api-salary-configs-get-plain';
 export type { ApiSalaryConfigsGet$Json$Params as ApiSalaryConfigsGet$Json$Params } from './fn/salary-configs/api-salary-configs-get-json';

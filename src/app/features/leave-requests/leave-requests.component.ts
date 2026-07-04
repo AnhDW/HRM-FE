@@ -2,6 +2,7 @@ import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, Send, Calendar, Info, Loader2 } from 'lucide-angular';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { Api } from '../../services/api-services/api';
 import { AuthService } from '../../core/services/auth.service';
 import { apiEmployeesMeGet$Json } from '../../services/api-services/fn/employees/api-employees-me-get-json';
@@ -14,12 +15,15 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
 @Component({
   selector: 'app-leave-requests',
   standalone: true,
-  imports: [CommonModule, FormsModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-8 animate-in fade-in duration-700">
-      <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Yêu cầu nghỉ phép</h1>
-        <p class="text-slate-500 mt-2">Gửi yêu cầu nghỉ phép và theo dõi trạng thái.</p>
+      <div data-tutorial="lr-header" class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Yêu cầu nghỉ phép</h1>
+          <p class="text-slate-500 mt-2">Gửi yêu cầu nghỉ phép và theo dõi trạng thái.</p>
+        </div>
+        <app-tutorial-button tutorialId="employee-leave-requests"></app-tutorial-button>
       </div>
 
       @if (error()) {
@@ -32,7 +36,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
 
       <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
         <!-- Request Form -->
-        <div class="xl:col-span-5 bg-white rounded-3xl p-10 shadow-soft border border-slate-100">
+        <div data-tutorial="lr-form" class="xl:col-span-5 bg-white rounded-3xl p-10 shadow-soft border border-slate-100">
           <h2 class="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
             <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
               <lucide-icon name="send" class="w-4 h-4"></lucide-icon>
@@ -41,7 +45,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
           </h2>
 
           <form (ngSubmit)="submitRequest()" class="space-y-6">
-            <div class="space-y-2">
+            <div data-tutorial="lr-type" class="space-y-2">
               <label class="text-sm font-bold text-slate-700 ml-1">Loại nghỉ phép</label>
               <select
                 [(ngModel)]="newRequest.leaveType"
@@ -54,7 +58,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
               </select>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div data-tutorial="lr-dates" class="grid grid-cols-2 gap-4">
               <div class="space-y-2">
                 <label class="text-sm font-bold text-slate-700 ml-1">Ngày bắt đầu</label>
                 <div class="relative">
@@ -88,7 +92,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
               ></textarea>
             </div>
 
-            <div class="space-y-2">
+            <div data-tutorial="lr-approver" class="space-y-2">
               <label class="text-sm font-bold text-slate-700 ml-1">Người duyệt</label>
               <select
                 [(ngModel)]="newRequest.approvedBy"
@@ -102,7 +106,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
               </select>
             </div>
 
-            <button
+            <button data-tutorial="lr-submit"
               type="submit"
               [disabled]="submitting()"
               class="w-full py-4 bg-emerald-700 text-white rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20 disabled:opacity-50 flex items-center justify-center gap-2"
@@ -118,7 +122,7 @@ import { CreateLeaveRequestDto } from '../../services/api-services/models/create
         </div>
 
         <!-- History List -->
-        <div class="xl:col-span-7 space-y-4">
+        <div data-tutorial="lr-history" class="xl:col-span-7 space-y-4">
           <div class="flex items-center justify-between mb-2">
             <h2 class="text-xl font-bold text-slate-900">Đơn gần đây</h2>
             <span class="text-sm font-semibold text-slate-400">Hiển thị 5 đơn gần nhất</span>

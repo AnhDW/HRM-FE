@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LucideAngularModule, Search, Filter, MoreVertical, Eye, UserPlus, Mail, Phone, X, User, Briefcase, Calendar, Building, Loader2, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-angular';
 import { MockDataService } from '../../core/services/mock-data.service';
 import { Api } from '../../services/api-services/api';
+import { TutorialButtonComponent } from '../../shared/tutorial/tutorial-button.component';
 import { apiEmployeesPost$Json } from '../../services/api-services/fn/employees/api-employees-post-json';
 import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/api-employees-get-json';
 
@@ -12,7 +13,7 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
 @Component({
   selector: 'app-admin-employee',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, LucideAngularModule],
+  imports: [CommonModule, FormsModule, RouterModule, LucideAngularModule, TutorialButtonComponent],
   template: `
     <div class="space-y-8 animate-in fade-in duration-700">
       <!-- Header -->
@@ -21,14 +22,17 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
           <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Danh sách nhân viên</h1>
            <p class="text-slate-500 mt-2">Quản lý nhân sự, vị trí và lịch sử công tác.</p>
         </div>
-        <button (click)="showAddPopup.set(true)" class="flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20">
-          <lucide-icon name="user-plus" class="w-5 h-5"></lucide-icon>
-           Thêm nhân viên
-         </button>
+        <div class="flex items-center gap-3">
+          <app-tutorial-button tutorialId="admin-employees"></app-tutorial-button>
+          <button (click)="showAddPopup.set(true)" data-tutorial="employee-add" class="flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20">
+            <lucide-icon name="user-plus" class="w-5 h-5"></lucide-icon>
+            Thêm nhân viên
+          </button>
+        </div>
       </div>
 
       <!-- Filters -->
-      <div class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div data-tutorial="employee-filter" class="bg-white p-6 rounded-2xl shadow-soft border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div class="flex flex-wrap items-center gap-4 flex-1">
             <div class="relative flex-1 min-w-[200px]">
             <lucide-icon name="search" class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></lucide-icon>
@@ -80,7 +84,7 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
 
       <!-- Employee List -->
       @if (!loading() && !loadError()) {
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div data-tutorial="employee-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           @for (emp of employees(); track emp.id) {
             <div class="group bg-white rounded-[24px] p-6 shadow-soft border border-slate-100 hover:border-emerald-100 transition-all duration-300 relative">
               <div class="flex justify-between items-start mb-5">
@@ -113,10 +117,11 @@ import { apiEmployeesGet$Json } from '../../services/api-services/fn/employees/a
               </div>
 
               <div class="mt-8 pt-6 border-t border-slate-50 flex gap-3">
-                 <a 
-                   [routerLink]="[emp.id]"
-                   class="flex-1 flex items-center justify-center gap-2 py-3 bg-slate-50 text-slate-600 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all text-sm"
-                 >
+                  <a 
+                    [routerLink]="[emp.id]"
+                    data-tutorial="employee-view-profile"
+                    class="flex-1 flex items-center justify-center gap-2 py-3 bg-slate-50 text-slate-600 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all text-sm"
+                  >
                    <lucide-icon name="eye" class="w-4 h-4"></lucide-icon>
                       Xem hồ sơ
                  </a>
